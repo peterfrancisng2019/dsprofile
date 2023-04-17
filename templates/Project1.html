@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Machine Learning Projects</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<style>
+		.centered-form {
+			margin-top: 60px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 offset-md-3 centered-form">
+				<form action="{{ url_for('predict')}}" method="post">
+					<div class="form-group">
+						<label for="distance">Distance to Metro Station:</label>
+						<input type="text" name="distance_to_metro" placeholder="Distance" required="required" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="Nos_of_stores" class="form-label">Number of Close by Stores</label>
+    						<input type="text" name="nos_of_conv" placeholder="Number of Stores" required="required" class="form-control">
+  
+					</div>
+					<button type="submit" class="btn btn-primary">Get House Price</button>
+				</form>
+				<br>
+    				<br>
+  					<b> {{ prediction_text }} </b>
+
+			</div>
+		</div>
+	</div>
+	<!-- Bootstrap JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.3/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
